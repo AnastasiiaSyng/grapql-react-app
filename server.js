@@ -5,12 +5,17 @@ const cors = require('cors');
 let todos = [
   {
     id: 0,
-    text: 'Hello from GraphQL',
+    text: 'eat a delicious croissant with coffee in paris',
     completed: false,
   },
   {
     id: 2,
-    text: 'Haaaaa',
+    text: 'search Loch Ness monster',
+    completed: false,
+  },
+  {
+    id: 3,
+    text: 'see troll tongue',
     completed: false,
   }
 ];
@@ -62,5 +67,5 @@ const resolvers = {
   app.use(cors());
   
   app.listen({ port: 4000 }, () =>
-    console.log('Now browse to http://localhost:4000' + server.graphqlPath)
+    console.log('browse to http://localhost:4000' + server.graphqlPath)
   );

@@ -38,7 +38,7 @@ const App = () => {
   if (!data) return <p>Not found</p>;
 
   return (
-    <div>
+    <div className="container">
       <h3>What I will do if corona virus disappeared</h3>
       <form onSubmit={e => {
           e.preventDefault();
@@ -49,18 +49,18 @@ const App = () => {
         <input type="text" ref={node => { input = node;}}></input>
         <button>ADD</button>
       </form>
-      <ul>
+      <ul className="list">
         {data.todos.map((todo) => 
           <li key={todo.id}>
             <span className={todo.completed ? 'completed' : 'pending'}>{todo.text}</span>
-            <button onClick={() => {
+            <button className="button" onClick={() => {
                 deleteTodo({ variables: { id: todo.id } });
                 window.location.reload();
             }}>X</button>
           </li>
           )}
       </ul>
-    </div>
+      </div>
   )
 }
 
